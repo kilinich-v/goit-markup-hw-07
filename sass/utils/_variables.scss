@@ -1,0 +1,71 @@
+// $title-text-color: #212121;
+// $primary-text-color: #757575;
+// $assent-color: #2196f3;
+// $secondary-text-color: #ffffff;
+// $logo-color: #000000;
+// $primary-bg-color: #ffffff;
+// $secondary-bg-color: #f5f4fa;
+// $footer-bg-color: #2f303a;
+// $decoration-color: #afb1b8;
+
+$colors: (
+	"text-primary": #757575,
+	"text-secondary": #ffffff,
+	"text-title": #212121,
+	"bg-primary": #fff,
+	"bg-secondary": #f5f4fa,
+	"bg-footer": #2f303a,
+	"decoration": #afb1b8,
+	"accent": #2196f3,
+);
+
+@function getColor($key) {
+	@return map-get($colors, $key);
+}
+
+@mixin fontParam($fontSize: 14px, $fontWeight: 400, $lineHeight: 1.71, $letterSpacing: 0.03em) {
+	font-size: $fontSize;
+	font-weight: $fontWeight;
+	line-height: $lineHeight;
+	letter-spacing: $letterSpacing;
+}
+
+@mixin flexBox($mainAxis, $crossAxis) {
+	display: flex;
+	justify-content: $mainAxis;
+	align-items: $crossAxis;
+}
+
+@mixin svgIcon($width, $height, $fill) {
+	width: $width;
+	height: $height;
+	fill: $fill;
+}
+
+@mixin button($btnPadding, $btnColor) {
+	padding: $btnPadding;
+	background-color: $btnColor;
+	border: 0;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+@mixin transition($animationTarget) {
+	transition: $animationTarget 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+%titleMargin {
+	margin-top: 0;
+	margin-bottom: 50px;
+}
+
+%sectionPadding {
+	padding-top: 94px;
+	padding-bottom: 94px;
+}
+
+%centeringBox {
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
